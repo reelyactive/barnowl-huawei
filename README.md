@@ -20,6 +20,59 @@ Clone this repository, install package dependencies with `npm install`, and then
 __barnowl-huawei__ will listen for UDP packets from Huawei APs on localhost:50010 and print any processed [raddec](https://github.com/reelyactive/raddec) data to the console.
 
 
+Hello barnowl-huawei!
+---------------------
+
+The following code will listen to _simulated_ hardware and output packets to the console:
+
+```javascript
+const BarnowlHuawei = require('barnowl-huawei');
+
+let barnowl = new BarnowlHuawei();
+
+barnowl.addListener(BarnowlHuawei.TestListener, {});
+
+barnowl.on('raddec', function(raddec) {
+  console.log(raddec);
+});
+```
+
+
+Supported Listener Interfaces
+-----------------------------
+
+The following listener interfaces are supported.
+
+### UDP
+
+```javascript
+barnowl.addListener(BarnowlHuawei.UdpListener, { path: "0.0.0.0:50010" });
+```
+
+### Test
+
+Provides a steady stream of simulated Huawei packets for testing purposes.
+
+```javascript
+barnowl.addListener(BarnowlHuawei.TestListener, {});
+```
+
+
+Huawei Bluetooth Service Profile Parameters
+-------------------------------------------
+
+Use the following Bluetooth Scanning parameters for the Huawei AP/AC:
+
+| Property                           | Value                    | 
+|:-----------------------------------|:-------------------------|
+| Monitoring surrounding BLE devices | ON                       |
+| Monitoring mode                    | Transparent transmission |
+| Data reporting                     | ON                       |
+| Data reporting time                | Real-time                |
+
+For the IPv4 address/port parameter, specify the IP address of the server running __barnowl-huawei__ and port 50010.
+
+
 License
 -------
 
