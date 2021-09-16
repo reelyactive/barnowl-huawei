@@ -8,7 +8,7 @@
     "barnowl",
     "Huawei"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": ">=6.0.0"
   },
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "advlib-identifier": ">=0.1.0",
-    "raddec": ">=0.2.7"
+    "raddec": ">=0.2.8"
   },
   "devDependencies": {},
   "bugs": {
