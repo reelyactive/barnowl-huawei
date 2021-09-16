@@ -73,6 +73,16 @@ Use the following Bluetooth Scanning parameters for the Huawei AP/AC:
 For the IPv4 address/port parameter, specify the IP address of the server running __barnowl-huawei__ and port 50010.
 
 
+Supported Decoding Options
+--------------------------
+
+Each listener interface supports _decodingOptions_ with the following properties:
+
+| Property           | Default | Description                         | 
+|:-------------------|:--------|:------------------------------------|
+| timestampOnArrival | true    | Override any timestamp included in the inbound packet with the time at which it is received by barnowl-huawei |
+
+
 License
 -------
 
