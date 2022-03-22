@@ -119,6 +119,20 @@ Each listener interface supports _decodingOptions_ with the following properties
 | timestampOnArrival | true    | Override any timestamp included in the inbound packet with the time at which it is received by barnowl-huawei |
 
 
+Contributing
+------------
+
+Discover [how to contribute](CONTRIBUTING.md) to this open source project which upholds a standard [code of conduct](CODE_OF_CONDUCT.md).
+
+
+Security
+--------
+
+Consult our [security policy](SECURITY.md) for best practices using this open source software and to report vulnerabilities.
+
+[![Known Vulnerabilities](https://snyk.io/test/github/reelyactive/barnowl-huawei/badge.svg)](https://snyk.io/test/github/reelyactive/barnowl-huawei)
+
+
 License
 -------
 
