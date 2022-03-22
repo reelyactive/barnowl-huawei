@@ -1,7 +1,12 @@
 barnowl-huawei
 ==============
 
-Interface Huawei access points with [barnowl](https://github.com/reelyactive/barnowl) open source software.  We believe in an open Internet of Things.
+__barnowl-huawei__ converts RF decodings from Huawei access points into software-developer-friendly JSON: a real-time stream of [raddec](https://github.com/reelyactive/raddec/) objects which facilitate any and all of the following applications:
+- RFID: _what_ is present, based on the device identifier?
+- RTLS: _where_ is it relative to the receiving devices?
+- M2M: _how_ is its status, based on any payload included in the packet?
+
+__barnowl-huawei__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnowl-huawei) that can run on resource-constrained edge devices as well as on powerful cloud servers and anything in between.  It is typically run behind a [barnowl](https://github.com/reelyactive/barnowl) instance which is included in the [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) open source middleware suite.
 
 
 Installation
@@ -36,6 +41,37 @@ barnowl.on('raddec', function(raddec) {
   console.log(raddec);
 });
 ```
+
+As output you should see a stream of [raddec](https://github.com/reelyactive/raddec/) objects similar to the following:
+
+```javascript
+{
+  transmitterId: "fee150bada55",
+  transmitterIdType: 2,
+  rssiSignature: [
+    {
+      receiverId: "24a52cffffff",
+      receiverIdType: 2,
+      rssi: -72,
+      numberOfDecodings: 1
+    }
+  ],
+  packets: [ '000755daba50e1fe02011a03ff7d02' ],
+  timestamp: 1547693457133
+}
+```
+
+Regardless of the underlying RF protocol and hardware, the [raddec](https://github.com/reelyactive/raddec/) specifies _what_ (transmitterId) is _where_ (receiverId & rssi), as well as _how_ (packets) and _when_ (timestamp).
+
+
+Is that owl you can do?
+-----------------------
+
+While __barnowl-huawei__ may suffice standalone for simple real-time applications, its functionality can be greatly extended with the following software packages:
+- [advlib](https://github.com/reelyactive/advlib) to decode the individual packets from hexadecimal strings into JSON
+- [barnowl](https://github.com/reelyactive/barnowl) to combine parallel streams of RF decoding data in a technology-and-vendor-agnostic way
+
+These packages and more are bundled together as the [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere) open source middleware suite, which includes several __barnowl-x__ listeners.
 
 
 Supported Listener Interfaces
