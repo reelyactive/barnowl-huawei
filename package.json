@@ -2,13 +2,14 @@
   "name": "barnowl-huawei",
   "homepage": "https://github.com/reelyactive/barnowl-huawei/",
   "author": "reelyActive <webdev@reelyactive.com>",
-  "description": "Interface Huawei access points with barnowl open source software.  We believe in an open Internet of Things.",
+  "description": "Collect ambient Bluetooth Low Energy packets from Huawei access points for real-time location and sensing.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
     "barnowl",
-    "Huawei"
+    "Huawei",
+    "raddec"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "node": ">=6.0.0"
   },
